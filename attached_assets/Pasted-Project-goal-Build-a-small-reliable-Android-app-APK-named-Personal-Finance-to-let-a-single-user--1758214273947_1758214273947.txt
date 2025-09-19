@@ -1,0 +1,64 @@
+Project goal: Build a small, reliable Android app (APK) named Personal Finance to let a single user track Savings, Expenses, Debt, Needs, and Wants.
+Hard requirements
+
+Currency: All amounts shown and stored must use Indian Rupees (₹).
+
+Local persistence only: Use on-device storage (SQLite/sqflite or an equivalent local DB). Data must remain accessible after 3+ months (i.e., permanent storage unless the app is uninstalled or user clears app data).
+
+No demo data: On first launch the database must be empty. Do not prefill sample transactions.
+
+Offline functionality: App works without network connectivity. No cloud sync by default.
+
+Core features
+
+Add transaction: title, amount (₹), date, category (Saving / Expense / Debt / Need / Want), optional notes.
+
+Edit & delete transactions.
+
+Monthly view & historical navigation (view previous months).
+
+Overview cards showing sums per category and total balances.
+
+Search & filter by date range and category.
+
+Export & import backup (CSV or JSON) to local storage / Downloads folder so user can preserve data outside the app.
+
+Optional: PIN / biometric lock (mention as optional in README).
+
+UI / UX
+
+Simple Material Design, responsive for phone screens.
+
+Start screen shows Overview and Recent Transactions.
+
+All currency labels show ₹.
+
+Technical stack & deliverables
+
+Preferred: Flutter with sqflite for storage (so the project builds cross-platform if needed). If another stack is used, document why.
+
+Deliver:
+
+Signed release APK (or if you cannot provide a signed binary, include exact steps and a key.properties template and instructions to produce a signed .apk).
+
+Full source code (hosted in Git repository).
+
+A clear README including: how to set up the dev environment (GitHub Codespaces + Flutter + Android SDK commands), how to build debug & release APKs, how to sign the app, and how to install the APK on an Android phone.
+
+Simple test checklist verifying persistence (e.g., add transactions, close app, reopen after a simulated time / reboot — data remains).
+
+Acceptance criteria
+
+On fresh install the app shows no transactions.
+
+User can add a transaction in ₹ and immediately see it in monthly and category summaries.
+
+After closing and reopening the app (and after 90 days), the transaction remains available.
+
+User can export transactions to a CSV and import them back.
+
+Optional but recommended
+
+Provide both an unsigned debug APK (for quick install) and instructions or helper scripts to produce a signed release APK.
+
+Add automatic backup option (local export schedule) and a manual restore flow.
